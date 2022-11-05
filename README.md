@@ -1,7 +1,7 @@
 # web platform
 Build tools for Web Driven: Platforms, Operating Systems, Embedded Devices
 
-[](layercake)
+![Chromium layer cake 2021](layercake.png)
 
 
 
