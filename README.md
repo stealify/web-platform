@@ -1,9 +1,14 @@
-# webplatform
+# web platform
 Build tools for Web Driven: Platforms, Operating Systems, Embedded Devices
+
+[](layercake)
+
+
 
 Mainly this supplys the glue code for the modules: chromium-content and wpe-webkit
 - chromium/src/content (webkit)
-- chromium/src/webkit (content)
+- chromium/src/content NPAPI / components / plugins
+- chromium/src/webkit / WPE (content)
 - chromium/src/third_party/webkit (content,chromium)
 
 ## Motivation
@@ -27,5 +32,8 @@ Safe Browsing
 Translate
 
 Instead, these features are implemented in chromium, while content only provides generic extension points that allow these features to subscribe to the events they require. Some features will require adding new extension points: for more information, see How to Add New Features (without bloating RenderView/RenderViewHost/WebContents).
+
+Since 2021 also a additional component system got 
+
 
 Finally, there are a number of browser features that require interaction with online services supplied by the vendor, e.g. from the above list, Safe Browsing, Translate, Sync, and Autofill all require various network services to function. The chrome layer is the natural place to encapsulate that vendor-specific integration behavior. For the rare cases where a web platform feature implemented in content has a dependency on a network service (e.g. the network location service used by Geolocation), content should provide a way for the embedder to inject an endpoint (e.g. chromium might provide the service URL to use). The content module itself must remain generic, with no hardcoded vendor-specific logic.
